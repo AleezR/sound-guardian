@@ -4,17 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    // 🟢 Frontend Scripts
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-
-    // 🔵 Backend Scripts (Node + TypeScript)
     "dev:backend": "ts-node src/backend/index.ts",
     "build:backend": "tsc --project tsconfig.node.json",
-    "start:backend": "node dist/backend/index.js"
+    "start:backend": "node dist/backend/index.js",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:generate-types": "supabase gen types typescript --local > src/types/supabase.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -67,8 +68,6 @@
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.9",
     "zod": "^3.25.76",
-
-    // 🟡 Backend/Audioprocessing (install as needed)
     "axios": "^1.6.8",
     "dotenv": "^16.3.1",
     "node-record-lpcm16": "^1.0.5",
@@ -94,6 +93,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vite": "^5.4.19"
+    "vite": "^5.4.19",
+    "supabase": "^1.200.3"
   }
 }
