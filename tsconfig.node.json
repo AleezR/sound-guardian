@@ -1,22 +1,28 @@
 {
   "compilerOptions": {
+    /* Output settings */
     "target": "ES2022",
-    "lib": ["ES2023"],
+    "lib": ["ES2022"],
     "module": "ESNext",
-    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    "outDir": "dist/backend",
+    "rootDir": "src/backend",
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    /* Module + import settings */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
 
-    /* Linting */
+    /* Strictness & Linting */
     "strict": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Node-specific */
+    "types": ["node"],
+    "skipLibCheck": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["src/backend/**/*.ts"]
 }
